@@ -1,4 +1,4 @@
-update=Dimanche 18 mai 2014 22:05:30
+update=Dimanche 18 mai 2014 22:45:49
 last_client=eeschema
 [general]
 version=1
@@ -44,3 +44,4 @@ LibName30=valves
 LibName31=librairie KICAD/ad9954
 LibName32=librairie KICAD/balun
 LibName33=librairie KICAD/SMA_connectors
+LibName34=librairie KICAD/inductor

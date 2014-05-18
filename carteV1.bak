@@ -30,6 +30,8 @@ LIBS:atmel
 LIBS:contrib
 LIBS:valves
 LIBS:ad9954
+LIBS:balun
+LIBS:SMA_connectors
 LIBS:carteV1-cache
 EELAYER 27 0
 EELAYER END
@@ -69,34 +71,151 @@ F 3 "" H 10000 1800 60  0000 C CNN
 $EndComp
 Text GLabel 9300 850  0    60   Input ~ 0
 GND
-Wire Wire Line
-	9300 850  9600 850 
 Text GLabel 3500 2700 0    60   Input ~ 0
 GND
-Wire Wire Line
-	3500 2700 3950 2700
 Text GLabel 3500 2900 0    60   Input ~ 0
 GND
-Wire Wire Line
-	3500 2900 3950 2900
 Text GLabel 3500 3100 0    60   Input ~ 0
 GND
-Wire Wire Line
-	3500 3100 3950 3100
 Text GLabel 3500 2600 0    60   Input ~ 0
 DVDD
-Wire Wire Line
-	3500 2600 3950 2600
 Text GLabel 3500 2500 0    60   Input ~ 0
 FUD_DUT
-Wire Wire Line
-	3500 2500 3950 2500
 Text GLabel 3500 2800 0    60   Input ~ 0
 AVDD
-Wire Wire Line
-	3500 2800 3950 2800
 Text GLabel 3500 3000 0    60   Input ~ 0
 AVDD
+$Comp
+L BALUN T4
+U 1 1 53791146
+P 1150 3500
+F 0 "T4" H 850 3850 60  0000 C CNN
+F 1 "BALUN" H 950 3150 60  0000 C CNN
+F 2 "" H 1150 3500 60  0000 C CNN
+F 3 "" H 1150 3500 60  0000 C CNN
+	1    1150 3500
+	0    -1   -1   0   
+$EndComp
+Text GLabel 950  2850 1    60   Input ~ 0
+GND
+$Comp
+L 449.42.2522.201 J?
+U 1 1 537912AE
+P 2500 5100
+F 0 "J?" H 2650 5500 60  0000 C CNN
+F 1 "449.42.2522.201" H 3000 5400 60  0000 C CNN
+F 2 "SOLEIL-SMA-449" H 3450 5250 60  0001 C CNN
+F 3 "" H 2500 5100 60  0000 C CNN
+F 4 "IMS" H 3150 5150 60  0001 C CNN "Manufacturer"
+F 5 "449.42.2522.201" H 3450 5050 60  0001 C CNN "Manufacturer ref"
+F 6 "PN Electronics" H 3400 4950 60  0001 C CNN "Supplier"
+F 7 "449.42.2522.201" H 3450 4850 60  0001 C CNN "Supplier ref"
+F 8 "1" H 2650 5300 60  0000 C CNN "Qty"
+F 9 "-" H 3100 4750 60  0001 C CNN "Desc1"
+F 10 "-" H 3100 4650 60  0001 C CNN "Desc2"
+F 11 "-" H 3100 4550 60  0001 C CNN "Desc3"
+F 12 "-" H 3200 4550 60  0001 C CNN "Desc4"
+F 13 "IMS 449" H 3250 4450 60  0001 C CNN "Case"
+F 14 "58" H 3100 4350 60  0001 C CNN "Price"
+	1    2500 5100
+	1    0    0    -1  
+$EndComp
+Text GLabel 2300 5600 0    60   Input ~ 0
+GND
+$Comp
+L R R18
+U 1 1 537913D8
+P 1600 3450
+F 0 "R18" V 1680 3450 40  0000 C CNN
+F 1 "50Ω" V 1607 3451 40  0000 C CNN
+F 2 "~" V 1530 3450 30  0000 C CNN
+F 3 "~" H 1600 3450 30  0000 C CNN
+	1    1600 3450
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	9300 850  9600 850 
+Wire Wire Line
+	3500 2700 3950 2700
+Wire Wire Line
+	3500 2900 3950 2900
+Wire Wire Line
+	3500 3100 3950 3100
+Wire Wire Line
+	3500 2600 3950 2600
+Wire Wire Line
+	3500 2500 3950 2500
+Wire Wire Line
+	3500 2800 3950 2800
 Wire Wire Line
 	3500 3000 3950 3000
+Wire Wire Line
+	2300 5600 2950 5600
+Wire Wire Line
+	2650 5350 2650 5600
+Wire Wire Line
+	2750 5600 2750 5350
+Wire Wire Line
+	2850 5600 2850 5350
+Connection ~ 2750 5600
+Wire Wire Line
+	2950 5600 2950 5350
+Connection ~ 2850 5600
+Wire Wire Line
+	950  3900 950  5100
+Wire Wire Line
+	950  5100 2500 5100
+Wire Wire Line
+	950  3100 950  2850
+$Comp
+L C C64
+U 1 1 537914B2
+P 2150 3600
+F 0 "C64" H 2150 3700 40  0000 L CNN
+F 1 "0.1μF" H 2156 3515 40  0000 L CNN
+F 2 "~" H 2188 3450 30  0000 C CNN
+F 3 "~" H 2150 3600 60  0000 C CNN
+	1    2150 3600
+	0    -1   -1   0   
+$EndComp
+$Comp
+L C C63
+U 1 1 537914C1
+P 2150 3250
+F 0 "C63" H 2150 3350 40  0000 L CNN
+F 1 "0.1μF" H 2156 3165 40  0000 L CNN
+F 2 "~" H 2188 3100 30  0000 C CNN
+F 3 "~" H 2150 3250 60  0000 C CNN
+	1    2150 3250
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	1350 3100 1600 3100
+Wire Wire Line
+	1600 3100 1600 3200
+Wire Wire Line
+	1350 3900 1600 3900
+Wire Wire Line
+	1600 3900 1600 3700
+Wire Wire Line
+	1550 3700 1950 3700
+Wire Wire Line
+	1950 3700 1950 3600
+Wire Wire Line
+	1600 3150 1950 3150
+Wire Wire Line
+	1950 3150 1950 3250
+Connection ~ 1600 3150
+Wire Wire Line
+	2350 3250 3150 3250
+Wire Wire Line
+	3150 3250 3150 3200
+Wire Wire Line
+	3150 3200 3950 3200
+Wire Wire Line
+	2350 3600 2500 3600
+Wire Wire Line
+	2500 3600 2500 3300
+Wire Wire Line
+	2500 3300 3950 3300
 $EndSCHEMATC
