@@ -36,10 +36,10 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title ""
+Title "AD9954 - GENERATION SIGNAL HF"
 Date "18 may 2014"
-Rev ""
-Comp ""
+Rev "0.1"
+Comp "Polytech'Tours"
 Comment1 ""
 Comment2 ""
 Comment3 ""
