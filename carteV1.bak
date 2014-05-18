@@ -75,10 +75,28 @@ Text GLabel 3500 2700 0    60   Input ~ 0
 GND
 Wire Wire Line
 	3500 2700 3950 2700
-Text GLabel 3500 2850 0    60   Input ~ 0
+Text GLabel 3500 2900 0    60   Input ~ 0
 GND
 Wire Wire Line
-	3500 2850 3950 2850
+	3500 2900 3950 2900
+Text GLabel 3500 3100 0    60   Input ~ 0
+GND
 Wire Wire Line
-	3950 2850 3950 2900
+	3500 3100 3950 3100
+Text GLabel 3500 2600 0    60   Input ~ 0
+DVDD
+Wire Wire Line
+	3500 2600 3950 2600
+Text GLabel 3500 2500 0    60   Input ~ 0
+FUD_DUT
+Wire Wire Line
+	3500 2500 3950 2500
+Text GLabel 3500 2800 0    60   Input ~ 0
+AVDD
+Wire Wire Line
+	3500 2800 3950 2800
+Text GLabel 3500 3000 0    60   Input ~ 0
+AVDD
+Wire Wire Line
+	3500 3000 3950 3000
 $EndSCHEMATC
