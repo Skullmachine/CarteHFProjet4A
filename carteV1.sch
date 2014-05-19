@@ -40,7 +40,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "AD9954 - GENERATION SIGNAL HF"
-Date "18 may 2014"
+Date "19 may 2014"
 Rev "0.1"
 Comp "Polytech'Tours"
 Comment1 ""
@@ -160,28 +160,28 @@ Text GLabel 3500 3400 0    60   Input ~ 0
 XTAL_AUTO
 Text GLabel 3500 3500 0    60   Input ~ 0
 CLKMODESEL_DUT2
-Text GLabel 1700 4200 0    60   Input ~ 0
+Text GLabel 2300 4550 0    60   Input ~ 0
 AVDD
 $Comp
 L C C61
 U 1 1 53791846
-P 2350 4200
-F 0 "C61" H 2350 4300 40  0000 L CNN
-F 1 "0.01μF" H 2356 4115 40  0000 L CNN
-F 2 "~" H 2388 4050 30  0000 C CNN
-F 3 "~" H 2350 4200 60  0000 C CNN
-	1    2350 4200
+P 2950 4550
+F 0 "C61" H 2950 4650 40  0000 L CNN
+F 1 "0.01μF" H 2956 4465 40  0000 L CNN
+F 2 "~" H 2988 4400 30  0000 C CNN
+F 3 "~" H 2950 4550 60  0000 C CNN
+	1    2950 4550
 	0    -1   -1   0   
 $EndComp
 $Comp
 L R R16
 U 1 1 53791855
-P 3100 4200
-F 0 "R16" V 3180 4200 40  0000 C CNN
-F 1 "243Ω" V 3107 4201 40  0000 C CNN
-F 2 "~" V 3030 4200 30  0000 C CNN
-F 3 "~" H 3100 4200 30  0000 C CNN
-	1    3100 4200
+P 3700 4550
+F 0 "R16" V 3780 4550 40  0000 C CNN
+F 1 "243Ω" V 3707 4551 40  0000 C CNN
+F 2 "~" V 3630 4550 30  0000 C CNN
+F 3 "~" H 3700 4550 30  0000 C CNN
+	1    3700 4550
 	0    -1   -1   0   
 $EndComp
 $Comp
@@ -344,6 +344,21 @@ F 3 "" H 4050 7600 60  0000 C CNN
 	1    4050 7600
 	1    0    0    -1  
 $EndComp
+$Comp
+L C C?
+U 1 1 53792166
+P 5300 7250
+F 0 "C?" H 5300 7350 40  0000 L CNN
+F 1 "C" H 5306 7165 40  0000 L CNN
+F 2 "~" H 5338 7100 30  0000 C CNN
+F 3 "~" H 5300 7250 60  0000 C CNN
+	1    5300 7250
+	1    0    0    -1  
+$EndComp
+Text GLabel 2900 2800 1    60   Input ~ 0
+GND
+Text GLabel 2550 3750 3    60   Input ~ 0
+GND
 Wire Wire Line
 	9300 850  9600 850 
 Wire Wire Line
@@ -412,13 +427,11 @@ Wire Wire Line
 Wire Wire Line
 	3500 3500 3950 3500
 Wire Wire Line
-	1700 4200 2150 4200
+	2300 4550 2750 4550
 Wire Wire Line
-	2550 4200 2850 4200
+	3150 4550 3450 4550
 Wire Wire Line
-	3350 4200 3350 3600
-Wire Wire Line
-	3350 3600 3950 3600
+	3950 3600 3950 4550
 Wire Wire Line
 	4000 5600 4650 5600
 Wire Wire Line
@@ -446,7 +459,7 @@ Connection ~ 2700 6900
 Wire Wire Line
 	2800 6900 2800 6650
 Wire Wire Line
-	3350 7450 5300 7450
+	3350 7450 4700 7450
 Connection ~ 4050 7450
 Wire Wire Line
 	4050 7600 4050 7450
@@ -478,17 +491,28 @@ Wire Wire Line
 	5300 6450 5300 7050
 Wire Wire Line
 	5300 6450 5200 6450
-$Comp
-L C C?
-U 1 1 53792166
-P 5300 7250
-F 0 "C?" H 5300 7350 40  0000 L CNN
-F 1 "C" H 5306 7165 40  0000 L CNN
-F 2 "~" H 5338 7100 30  0000 C CNN
-F 3 "~" H 5300 7250 60  0000 C CNN
-	1    5300 7250
-	1    0    0    -1  
-$EndComp
 Connection ~ 5300 6900
-Connection ~ 4700 7450
+Wire Wire Line
+	2900 2800 2900 3250
+Wire Wire Line
+	2550 3750 2550 3300
+Wire Wire Line
+	4699 7450 5300 7450
+Connection ~ 4699 7450
+Connection ~ 5300 7450
+Connection ~ 3350 7450
+Connection ~ 3500 6900
+Connection ~ 3600 6450
+Connection ~ 4000 6450
+Connection ~ 4150 6450
+Connection ~ 4550 6450
+Connection ~ 4800 6450
+Connection ~ 5200 6450
+Connection ~ 4150 6900
+Connection ~ 4650 6900
+Connection ~ 4800 6900
+Connection ~ 3350 7050
+Connection ~ 4050 7050
+Connection ~ 4700 7050
+Connection ~ 5300 7050
 $EndSCHEMATC
