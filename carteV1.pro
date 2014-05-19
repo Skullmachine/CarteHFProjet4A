@@ -1,4 +1,4 @@
-update=Lundi 19 mai 2014 15:17:20
+update=Lundi 19 mai 2014 22:26:18
 last_client=eeschema
 [general]
 version=1
@@ -47,3 +47,5 @@ LibName33=librairie KICAD/SMA_connectors
 LibName34=librairie KICAD/inductor
 LibName35=carteV1-cache
 LibName36=librairie KICAD/oscillator-cmos-out-4
+LibName37=librairie KICAD/MAX3421E-1-259960
+LibName38=librairie KICAD/Power_kl

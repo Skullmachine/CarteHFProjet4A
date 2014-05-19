@@ -33,6 +33,7 @@ LIBS:ad9954
 LIBS:balun
 LIBS:SMA_connectors
 LIBS:inductor
+LIBS:oscillator-cmos-out-4
 LIBS:carteV1-cache
 EELAYER 27 0
 EELAYER END
@@ -40,7 +41,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "AD9954 - GENERATION SIGNAL HF"
-Date "18 may 2014"
+Date "19 may 2014"
 Rev "0.1"
 Comp "Polytech'Tours"
 Comment1 ""
@@ -148,40 +149,40 @@ $EndComp
 $Comp
 L C C63
 U 1 1 537914C1
-P 2150 3250
-F 0 "C63" H 2150 3350 40  0000 L CNN
-F 1 "0.1μF" H 2156 3165 40  0000 L CNN
-F 2 "~" H 2188 3100 30  0000 C CNN
-F 3 "~" H 2150 3250 60  0000 C CNN
-	1    2150 3250
+P 2150 3000
+F 0 "C63" H 2150 3100 40  0000 L CNN
+F 1 "0.1μF" H 2156 2915 40  0000 L CNN
+F 2 "~" H 2188 2850 30  0000 C CNN
+F 3 "~" H 2150 3000 60  0000 C CNN
+	1    2150 3000
 	0    -1   -1   0   
 $EndComp
-Text GLabel 3500 3400 0    60   Input ~ 0
+Text GLabel 2350 4200 0    60   Input ~ 0
 XTAL_AUTO
-Text GLabel 3500 3500 0    60   Input ~ 0
+Text GLabel 2350 4300 0    60   Input ~ 0
 CLKMODESEL_DUT2
-Text GLabel 1700 4200 0    60   Input ~ 0
+Text GLabel 2300 4550 0    60   Input ~ 0
 AVDD
 $Comp
 L C C61
 U 1 1 53791846
-P 2350 4200
-F 0 "C61" H 2350 4300 40  0000 L CNN
-F 1 "0.01μF" H 2356 4115 40  0000 L CNN
-F 2 "~" H 2388 4050 30  0000 C CNN
-F 3 "~" H 2350 4200 60  0000 C CNN
-	1    2350 4200
+P 2950 4550
+F 0 "C61" H 2950 4650 40  0000 L CNN
+F 1 "0.01μF" H 2956 4465 40  0000 L CNN
+F 2 "~" H 2988 4400 30  0000 C CNN
+F 3 "~" H 2950 4550 60  0000 C CNN
+	1    2950 4550
 	0    -1   -1   0   
 $EndComp
 $Comp
 L R R16
 U 1 1 53791855
-P 3100 4200
-F 0 "R16" V 3180 4200 40  0000 C CNN
-F 1 "243Ω" V 3107 4201 40  0000 C CNN
-F 2 "~" V 3030 4200 30  0000 C CNN
-F 3 "~" H 3100 4200 30  0000 C CNN
-	1    3100 4200
+P 3700 4550
+F 0 "R16" V 3780 4550 40  0000 C CNN
+F 1 "243Ω" V 3707 4551 40  0000 C CNN
+F 2 "~" V 3630 4550 30  0000 C CNN
+F 3 "~" H 3700 4550 30  0000 C CNN
+	1    3700 4550
 	0    -1   -1   0   
 $EndComp
 $Comp
@@ -344,6 +345,54 @@ F 3 "" H 4050 7600 60  0000 C CNN
 	1    4050 7600
 	1    0    0    -1  
 $EndComp
+$Comp
+L C C?
+U 1 1 53792166
+P 5300 7250
+F 0 "C?" H 5300 7350 40  0000 L CNN
+F 1 "C" H 5306 7165 40  0000 L CNN
+F 2 "~" H 5338 7100 30  0000 C CNN
+F 3 "~" H 5300 7250 60  0000 C CNN
+	1    5300 7250
+	1    0    0    -1  
+$EndComp
+Text GLabel 2200 2600 0    60   Input ~ 0
+GND
+Text GLabel 2250 4000 0    60   Input ~ 0
+GND
+$Comp
+L CRYSTAL X1
+U 1 1 537A0ADF
+P 2340 3300
+F 0 "X1" H 2340 3450 60  0000 C CNN
+F 1 "25mhz" H 2340 3150 60  0000 C CNN
+F 2 "~" H 2340 3300 60  0000 C CNN
+F 3 "ECS-250-18-4X-DU" V 2850 4077 60  0000 C CNN
+	1    2340 3300
+	0    -1   -1   0   
+$EndComp
+$Comp
+L C C36
+U 1 1 537A0D25
+P 2350 2800
+F 0 "C36" H 2350 2900 40  0000 L CNN
+F 1 "18pF" H 2356 2715 40  0000 L CNN
+F 2 "~" H 2388 2650 30  0000 C CNN
+F 3 "" H 2350 2800 60  0000 C CNN
+	1    2350 2800
+	-1   0    0    1   
+$EndComp
+$Comp
+L C C35
+U 1 1 537A0D2B
+P 2350 3800
+F 0 "C35" H 2350 3900 40  0000 L CNN
+F 1 "18pF" H 2356 3715 40  0000 L CNN
+F 2 "~" H 2388 3650 30  0000 C CNN
+F 3 "~" H 2350 3800 60  0000 C CNN
+	1    2350 3800
+	-1   0    0    1   
+$EndComp
 Wire Wire Line
 	9300 850  9600 850 
 Wire Wire Line
@@ -390,35 +439,13 @@ Wire Wire Line
 	1550 3700 1950 3700
 Wire Wire Line
 	1950 3700 1950 3600
-Wire Wire Line
-	1600 3150 1950 3150
-Wire Wire Line
-	1950 3150 1950 3250
 Connection ~ 1600 3150
 Wire Wire Line
-	2350 3250 3150 3250
+	2300 4550 2750 4550
 Wire Wire Line
-	3150 3250 3150 3200
+	3150 4550 3450 4550
 Wire Wire Line
-	3150 3200 3950 3200
-Wire Wire Line
-	2350 3600 2500 3600
-Wire Wire Line
-	2500 3600 2500 3300
-Wire Wire Line
-	2500 3300 3950 3300
-Wire Wire Line
-	3500 3400 3950 3400
-Wire Wire Line
-	3500 3500 3950 3500
-Wire Wire Line
-	1700 4200 2150 4200
-Wire Wire Line
-	2550 4200 2850 4200
-Wire Wire Line
-	3350 4200 3350 3600
-Wire Wire Line
-	3350 3600 3950 3600
+	3950 3600 3950 4550
 Wire Wire Line
 	4000 5600 4650 5600
 Wire Wire Line
@@ -446,7 +473,7 @@ Connection ~ 2700 6900
 Wire Wire Line
 	2800 6900 2800 6650
 Wire Wire Line
-	3350 7450 5300 7450
+	3350 7450 4700 7450
 Connection ~ 4050 7450
 Wire Wire Line
 	4050 7600 4050 7450
@@ -478,17 +505,71 @@ Wire Wire Line
 	5300 6450 5300 7050
 Wire Wire Line
 	5300 6450 5200 6450
-$Comp
-L C C?
-U 1 1 53792166
-P 5300 7250
-F 0 "C?" H 5300 7350 40  0000 L CNN
-F 1 "C" H 5306 7165 40  0000 L CNN
-F 2 "~" H 5338 7100 30  0000 C CNN
-F 3 "~" H 5300 7250 60  0000 C CNN
-	1    5300 7250
-	1    0    0    -1  
-$EndComp
 Connection ~ 5300 6900
-Connection ~ 4700 7450
+Wire Wire Line
+	4699 7450 5300 7450
+Connection ~ 4699 7450
+Connection ~ 5300 7450
+Connection ~ 3350 7450
+Connection ~ 3500 6900
+Connection ~ 3600 6450
+Connection ~ 4000 6450
+Connection ~ 4150 6450
+Connection ~ 4550 6450
+Connection ~ 4800 6450
+Connection ~ 5200 6450
+Connection ~ 4150 6900
+Connection ~ 4650 6900
+Connection ~ 4800 6900
+Connection ~ 3350 7050
+Connection ~ 4050 7050
+Connection ~ 4700 7050
+Connection ~ 5300 7050
+Connection ~ 2350 3000
+Connection ~ 2350 3600
+Connection ~ 1950 3600
+Wire Wire Line
+	1586 3142 1948 3142
+Wire Wire Line
+	1948 3142 1948 3000
+Wire Wire Line
+	1948 3000 1952 3000
+Wire Wire Line
+	3936 3192 3936 3213
+Wire Wire Line
+	3936 3213 2589 3213
+Wire Wire Line
+	2589 3213 2589 2991
+Wire Wire Line
+	2589 2991 2337 2991
+Wire Wire Line
+	2346 3603 2616 3603
+Wire Wire Line
+	2616 3603 2616 3294
+Wire Wire Line
+	2616 3294 3948 3294
+Wire Wire Line
+	2346 4209 2694 4209
+Wire Wire Line
+	2694 4209 2694 3393
+Wire Wire Line
+	2694 3393 3945 3393
+Wire Wire Line
+	2337 4293 2784 4293
+Wire Wire Line
+	2784 4293 2784 3501
+Wire Wire Line
+	2784 3501 3942 3501
+Wire Wire Line
+	2244 4002 2346 4002
+Wire Wire Line
+	2346 4002 2346 3999
+Wire Wire Line
+	2190 2598 2340 2598
+Wire Wire Line
+	2340 2598 2340 2595
+Connection ~ 2200 2600
+Connection ~ 2350 2600
+Connection ~ 2250 4000
+Connection ~ 2350 4000
 $EndSCHEMATC
