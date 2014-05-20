@@ -618,6 +618,10 @@ F 3 "~" H 8175 2430 60  0000 C CNN
 $EndComp
 Text GLabel 8150 2750 3    60   Input ~ 0
 GND
+Text GLabel 10347 1038 2    60   Input ~ 0
+CHIPSELECT
+Text GLabel 6038 1503 1    60   Input ~ 0
+CHIPSELECT
 Wire Wire Line
 	9806 6246 9806 6264
 Wire Wire Line
@@ -1017,4 +1021,12 @@ Wire Wire Line
 	8172 2627 8172 2747
 Wire Wire Line
 	8172 2747 8147 2747
+Wire Wire Line
+	10095 1038 10345 1038
+Wire Wire Line
+	10345 1038 10345 1035
+Wire Wire Line
+	6012 1770 6012 1498
+Wire Wire Line
+	6012 1498 6032 1498
 $EndSCHEMATC
