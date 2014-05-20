@@ -1,4 +1,4 @@
-update=Mardi 20 mai 2014 00:19:44
+update=Mardi 20 mai 2014 02:07:57
 last_client=eeschema
 [general]
 version=1
@@ -50,3 +50,4 @@ LibName36=librairie KICAD/oscillator-cmos-out-4
 LibName37=librairie KICAD/MAX3421E-1-259960
 LibName38=librairie KICAD/Power_kl
 LibName39=librairie KICAD/FE
+LibName40=librairie KICAD/mcp2210

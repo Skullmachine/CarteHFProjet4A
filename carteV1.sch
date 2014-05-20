@@ -38,6 +38,7 @@ LIBS:oscillator-cmos-out-4
 LIBS:MAX3421E-1-259960
 LIBS:Power_kl
 LIBS:FE
+LIBS:mcp2210
 LIBS:carteV1-cache
 EELAYER 27 0
 EELAYER END
@@ -45,7 +46,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "AD9954 - GENERATION SIGNAL HF"
-Date "19 may 2014"
+Date "20 may 2014"
 Rev "0.1"
 Comp "Polytech'Tours"
 Comment1 ""
@@ -328,10 +329,10 @@ F 3 "~" H 4700 7250 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR?
+L GND #PWR01
 U 1 1 53791D95
 P 4050 7600
-F 0 "#PWR?" H 4050 7600 30  0001 C CNN
+F 0 "#PWR01" H 4050 7600 30  0001 C CNN
 F 1 "GND" H 4050 7530 30  0001 C CNN
 F 2 "" H 4050 7600 60  0000 C CNN
 F 3 "" H 4050 7600 60  0000 C CNN
@@ -395,17 +396,6 @@ F 1 "USB-MINI-B" H 10313 5468 60  0000 C CNN
 F 2 "" H 10363 5968 60  0000 C CNN
 F 3 "" H 10363 5968 60  0000 C CNN
 	1    10363 5968
-	1    0    0    -1  
-$EndComp
-$Comp
-L MAX3421E-1 IC?
-U 1 1 537A7593
-P 8698 1532
-F 0 "IC?" H 8098 2082 50  0000 L BNN
-F 1 "MAX3421E-1" H 8445 1536 50  0000 L BNN
-F 2 "TQFP32-5MM" H 8698 1682 50  0001 C CNN
-F 3 "" H 8698 1532 60  0000 C CNN
-	1    8698 1532
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -510,8 +500,6 @@ F 3 "~" H 10515 3732 300 0000 C CNN
 	1    10515 3732
 	1    0    0    -1  
 $EndComp
-Text GLabel 7754 808  0    60   Input ~ 0
-3V3
 $Comp
 L AD9954 U?
 U 1 1 537A9C40
@@ -530,9 +518,9 @@ L CRYSTAL X?
 U 1 1 537AA364
 P 7140 1200
 F 0 "X?" H 7140 1350 60  0000 C CNN
-F 1 "16mhz" H 7140 1050 60  0000 C CNN
+F 1 "12mhz" H 7140 1050 60  0000 C CNN
 F 2 "~" H 7140 1200 60  0000 C CNN
-F 3 " ECS-160-20-4X" V 7650 1977 60  0000 C CNN
+F 3 " ECS-120-20-4X" V 7650 1977 60  0000 C CNN
 	1    7140 1200
 	0    -1   -1   0   
 $EndComp
@@ -558,9 +546,9 @@ F 3 "~" H 6950 1500 60  0000 C CNN
 	1    6950 1500
 	0    1    1    0   
 $EndComp
-Text GLabel 7733 1096 0    60   Input ~ 0
+Text GLabel 7933 1596 0    60   Input ~ 0
 D+
-Text GLabel 7733 1216 0    60   Input ~ 0
+Text GLabel 7933 1716 0    60   Input ~ 0
 D-
 Text GLabel 9133 5796 0    60   Input ~ 0
 D+
@@ -568,30 +556,72 @@ Text GLabel 9133 5916 0    60   Input ~ 0
 D-
 Text GLabel 9500 6250 0    60   Input ~ 0
 GND
-Wire Wire Line
-	7563 2028 8097 2028
-Wire Wire Line
-	7563 1671 7563 2028
-Wire Wire Line
-	5913 1671 7563 1671
-Wire Wire Line
-	5913 1764 5913 1671
-Wire Wire Line
-	7743 1926 8091 1926
-Wire Wire Line
-	7743 1635 7743 1926
-Wire Wire Line
-	5805 1635 7743 1635
-Wire Wire Line
-	5805 1764 5805 1635
-Wire Wire Line
-	7941 1830 8091 1830
-Wire Wire Line
-	7941 1701 7941 1830
-Wire Wire Line
-	6102 1701 7941 1701
-Wire Wire Line
-	6102 1773 6102 1701
+$Comp
+L MCP2210-SO U?
+U 1 1 537ABAA0
+P 8696 889
+F 0 "U?" H 8696 939 50  0000 L BNN
+F 1 "MCP2210-SO" H 9046 789 50  0000 L BNN
+F 2 "SSOP-20" H 9046 739 50  0001 L CNN
+F 3 "~" H 9766 -1086 60  0000 C CNN
+	1    8696 889 
+	1    0    0    -1  
+$EndComp
+Text GLabel 10620 2071 2    60   Input ~ 0
+MOSI
+Text GLabel 10594 2210 2    60   Input ~ 0
+MISO
+Text GLabel 10588 2362 2    60   Input ~ 0
+SCK
+Text GLabel 5771 1530 1    60   Input ~ 0
+MOSI
+Text GLabel 6160 1506 1    60   Input ~ 0
+MISO
+Text GLabel 5912 1512 1    60   Input ~ 0
+SCK
+Text GLabel 8221 1230 0    60   Input ~ 0
+5V
+Text GLabel 8250 550  0    60   Input ~ 0
+GND
+$Comp
+L C C?
+U 1 1 537AD1AA
+P 8272 918
+F 0 "C?" H 8272 1018 40  0000 L CNN
+F 1 "C" H 8278 833 40  0000 L CNN
+F 2 "~" H 8310 768 30  0000 C CNN
+F 3 "~" H 8272 918 60  0000 C CNN
+	1    8272 918 
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C?
+U 1 1 537AD513
+P 7825 930
+F 0 "C?" H 7825 1030 40  0000 L CNN
+F 1 "C" H 7831 845 40  0000 L CNN
+F 2 "~" H 7863 780 30  0000 C CNN
+F 3 "~" H 7825 930 60  0000 C CNN
+	1    7825 930 
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C?
+U 1 1 537AD6CE
+P 8175 2430
+F 0 "C?" H 8175 2530 40  0000 L CNN
+F 1 "C" H 8181 2345 40  0000 L CNN
+F 2 "~" H 8213 2280 30  0000 C CNN
+F 3 "~" H 8175 2430 60  0000 C CNN
+	1    8175 2430
+	1    0    0    -1  
+$EndComp
+Text GLabel 8150 2750 3    60   Input ~ 0
+GND
+Text GLabel 10347 1038 2    60   Input ~ 0
+CHIPSELECT
+Text GLabel 6038 1503 1    60   Input ~ 0
+CHIPSELECT
 Wire Wire Line
 	9806 6246 9806 6264
 Wire Wire Line
@@ -609,18 +639,6 @@ Wire Wire Line
 Wire Wire Line
 	9126 5792 9334 5792
 Wire Wire Line
-	7841 1124 8089 1124
-Wire Wire Line
-	7841 1204 7841 1124
-Wire Wire Line
-	7725 1204 7841 1204
-Wire Wire Line
-	7821 1028 8081 1028
-Wire Wire Line
-	7821 1092 7821 1028
-Wire Wire Line
-	7717 1092 7821 1092
-Wire Wire Line
 	6744 1500 6741 1500
 Wire Wire Line
 	6744 1143 6744 1500
@@ -629,19 +647,11 @@ Wire Wire Line
 Wire Wire Line
 	6741 894  6741 1143
 Wire Wire Line
-	7383 1325 8094 1325
-Wire Wire Line
 	7383 881  7383 1325
-Wire Wire Line
-	7407 1427 8091 1427
-Wire Wire Line
-	7407 1508 7407 1427
 Connection ~ 7150 900 
 Connection ~ 7150 1500
 Wire Wire Line
 	7389 891  7137 891 
-Wire Wire Line
-	7146 1503 7416 1503
 Wire Wire Line
 	7044 1902 7146 1902
 Wire Wire Line
@@ -916,37 +926,107 @@ Wire Wire Line
 Wire Wire Line
 	9328 3870 9328 3764
 Wire Wire Line
-	7745 802  8090 802 
+	10082 2030 10616 2030
 Wire Wire Line
-	8090 802  8090 832 
+	10616 2030 10616 2074
 Wire Wire Line
-	8090 832  8087 832 
+	10096 2132 10428 2132
 Wire Wire Line
-	6004 1756 6004 1476
+	10428 2132 10428 2212
 Wire Wire Line
-	6004 1476 6496 1476
+	10428 2212 10590 2212
 Wire Wire Line
-	6496 1476 6496 1828
+	10590 2212 10590 2208
 Wire Wire Line
-	6496 1828 7464 1828
+	10086 2236 10342 2236
 Wire Wire Line
-	7464 1828 7464 2128
+	10342 2236 10342 2358
 Wire Wire Line
-	7464 2128 8092 2128
+	10342 2358 10584 2358
 Wire Wire Line
-	6006 1757 6006 1769
+	5910 1770 5910 1512
 Wire Wire Line
-	6006 1769 6018 1769
-Text GLabel 7500 2300 0    60   Input ~ 0
-GND
+	5910 1512 5906 1512
 Wire Wire Line
-	7500 2300 7800 2300
+	5812 1770 5812 1530
 Wire Wire Line
-	7794 2295 8094 2295
+	5812 1530 5766 1530
 Wire Wire Line
-	8094 2295 8094 2235
+	6162 1496 6156 1496
 Wire Wire Line
-	8093 2330 8093 2289
+	6111 1770 6147 1770
 Wire Wire Line
-	8093 2289 8091 2289
+	6147 1770 6147 1497
+Wire Wire Line
+	6147 1497 6150 1497
+Wire Wire Line
+	6153 1503 6162 1503
+Wire Wire Line
+	6162 1503 6162 1510
+Wire Wire Line
+	7368 1319 7368 1919
+Wire Wire Line
+	7368 1919 8382 1919
+Wire Wire Line
+	7122 1481 7122 2075
+Wire Wire Line
+	7122 2075 8382 2075
+Wire Wire Line
+	7134 1496 7134 1478
+Wire Wire Line
+	7134 1478 7116 1478
+Wire Wire Line
+	7923 1596 8394 1596
+Wire Wire Line
+	8394 1596 8394 1587
+Wire Wire Line
+	7935 1704 8388 1704
+Wire Wire Line
+	8388 1704 8388 1737
+Wire Wire Line
+	8219 1235 8389 1235
+Wire Wire Line
+	8389 1235 8389 1239
+Wire Wire Line
+	8252 554  8240 554 
+Wire Wire Line
+	8252 650  8252 554 
+Wire Wire Line
+	8272 1102 8308 1102
+Wire Wire Line
+	8308 1102 8308 1226
+Wire Wire Line
+	8232 646  8232 706 
+Wire Wire Line
+	8232 706  8264 706 
+Wire Wire Line
+	8261 710  8261 727 
+Wire Wire Line
+	8261 727  8271 727 
+Wire Wire Line
+	8271 727  8271 721 
+Wire Wire Line
+	7821 1138 7821 1378
+Wire Wire Line
+	7821 1378 8389 1378
+Wire Wire Line
+	7805 730  8261 730 
+Wire Wire Line
+	8261 730  8261 698 
+Wire Wire Line
+	8170 2226 8392 2226
+Wire Wire Line
+	8392 2226 8392 2236
+Wire Wire Line
+	8172 2627 8172 2747
+Wire Wire Line
+	8172 2747 8147 2747
+Wire Wire Line
+	10095 1038 10345 1038
+Wire Wire Line
+	10345 1038 10345 1035
+Wire Wire Line
+	6012 1770 6012 1498
+Wire Wire Line
+	6012 1498 6032 1498
 $EndSCHEMATC
