@@ -438,7 +438,7 @@ F 3 "~" H 10600 6300 300 0000 C CNN
 	1    10600 6300
 	1    0    0    -1  
 $EndComp
-Text GLabel 6850 1150 0    60   Input ~ 0
+Text GLabel 6750 1150 0    60   Input ~ 0
 GND
 $Comp
 L CRYSTAL X2
@@ -506,8 +506,6 @@ Text GLabel 6250 1400 1    60   Input ~ 0
 MISO
 Text GLabel 5950 1400 1    60   Input ~ 0
 SCK
-Text GLabel 8200 1200 0    60   Input ~ 0
-5V
 $Comp
 L C C12
 U 1 1 537AD1AA
@@ -519,18 +517,7 @@ F 3 "~" H 8200 800 60  0000 C CNN
 	1    8200 800 
 	1    0    0    -1  
 $EndComp
-$Comp
-L C C13
-U 1 1 537AD513
-P 7850 1950
-F 0 "C13" H 7850 2050 40  0000 L CNN
-F 1 "1uF" H 7856 1865 40  0000 L CNN
-F 2 "" H 7888 1800 30  0000 C CNN
-F 3 "~" H 7850 1950 60  0000 C CNN
-	1    7850 1950
-	1    0    0    -1  
-$EndComp
-Text GLabel 8000 2350 3    60   Input ~ 0
+Text GLabel 8200 2200 0    60   Input ~ 0
 GND
 Text GLabel 10400 1000 2    60   Input ~ 0
 CHIPSELECT
@@ -778,16 +765,6 @@ Wire Wire Line
 	8250 2050 8350 2050
 Wire Wire Line
 	8250 1900 8350 1900
-Wire Wire Line
-	7850 1350 8350 1350
-Wire Wire Line
-	7850 1750 7850 1350
-Wire Wire Line
-	8000 2150 7850 2150
-Connection ~ 8350 2200
-Connection ~ 8000 2250
-Wire Wire Line
-	8000 2150 8000 2350
 Connection ~ 8350 1000
 Connection ~ 8400 650 
 Wire Wire Line
@@ -802,30 +779,17 @@ Wire Wire Line
 Wire Wire Line
 	8300 1200 8300 650 
 Connection ~ 8200 600 
-Connection ~ 7950 600 
 Connection ~ 7800 600 
-Connection ~ 8200 1000
 Connection ~ 8350 1350
-Connection ~ 8250 1200
-Wire Wire Line
-	8250 1000 8250 1200
-Wire Wire Line
-	8200 1000 8250 1000
-Wire Wire Line
-	7800 600  8200 600 
 Connection ~ 8350 1200
 Wire Wire Line
-	8200 1200 8350 1200
+	8100 1200 8350 1200
 Connection ~ 8350 1550
 Connection ~ 8350 1700
 Wire Wire Line
 	8200 1700 8350 1700
 Wire Wire Line
 	8200 1550 8350 1550
-Wire Wire Line
-	8350 2250 8350 2200
-Wire Wire Line
-	8000 2250 8350 2250
 Connection ~ 10050 1000
 Wire Wire Line
 	10050 1000 10400 1000
@@ -1274,4 +1238,26 @@ Connection ~ 1550 3950
 NoConn ~ 1350 3150
 Wire Wire Line
 	3800 2450 3950 2450
+Wire Wire Line
+	8200 2200 8350 2200
+Connection ~ 8350 2200
+Connection ~ 8350 2050
+Connection ~ 8350 1900
+Connection ~ 8900 650 
+Text GLabel 8100 1200 0    60   Input ~ 0
+DVDD_I/O
+Wire Wire Line
+	8350 1200 8350 1350
+Wire Wire Line
+	7800 600  8200 600 
+Wire Wire Line
+	8200 1000 8200 1200
+Connection ~ 8200 1200
+Connection ~ 8200 1000
+Wire Wire Line
+	6750 1150 6850 1150
+Connection ~ 6850 1150
+Connection ~ 6000 1750
+Connection ~ 7200 3500
+Connection ~ 7200 3600
 $EndSCHEMATC
