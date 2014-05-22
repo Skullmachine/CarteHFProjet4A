@@ -1,5 +1,5 @@
-update=Mardi 20 mai 2014 17:01:05
-last_client=eeschema
+update=Jeudi 22 mai 2014 15:31:25
+last_client=cvpcb
 [general]
 version=1
 [eeschema]
@@ -52,3 +52,38 @@ LibName38=librairie KICAD/Power_kl
 LibName39=librairie KICAD/FE
 LibName40=librairie KICAD/mcp2210
 LibName41=librairie KICAD/minicir
+[pcbnew]
+[pcbnew/libraries]
+LibName1=sockets
+LibName2=connect
+LibName3=discret
+LibName4=pin_array
+LibName5=divers
+LibName6=smd_capacitors
+LibName7=smd_resistors
+LibName8=smd_crystal&oscillator
+LibName9=smd_dil
+LibName10=smd_transistors
+LibName11=libcms
+LibName12=display
+LibName13=led
+LibName14=dip_sockets
+LibName15=pga_sockets
+LibName16=valves
+LibName17=librairie KICAD/HC49_sm.kicad
+LibName18=librairie KICAD/SOT223
+LibName19=librairie KICAD/SMA_connectors
+LibName20=librairie KICAD/OSC_SMD
+LibName21=librairie KICAD/tinkerforge
+LibName22=librairie KICAD/AD9954
+LibName23=librairie KICAD/lasser
+LibName24=Resistors_SMD
+LibName25=librairie KICAD/smd_resistors
+LibName26=librairie KICAD/open-project
+LibName27=librairie KICAD/TANTALEC
+LibDir=
+[cvpcb]
+version=1
+NetIExt=net
+[cvpcb/libraries]
+EquName1=devcms
