@@ -47,7 +47,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "AD9954 - GENERATION SIGNAL HF"
-Date "25 may 2014"
+Date "26 may 2014"
 Rev "0.1"
 Comp "Polytech'Tours"
 Comment1 ""
@@ -733,15 +733,6 @@ Text GLabel 7500 850  2    60   Input ~ 0
 OSC
 Text GLabel 7450 1450 2    60   Input ~ 0
 /OSC
-NoConn ~ 7200 2600
-NoConn ~ 7200 3000
-NoConn ~ 7200 3100
-NoConn ~ 5100 1750
-NoConn ~ 5200 1750
-NoConn ~ 5300 1750
-NoConn ~ 5400 1750
-NoConn ~ 5500 1750
-NoConn ~ 6200 1750
 NoConn ~ 7200 3300
 NoConn ~ 7200 3400
 NoConn ~ 10050 1100
@@ -846,6 +837,21 @@ F 3 "" H 10750 2800 60  0000 C CNN
 	1    10750 2800
 	0    -1   -1   0   
 $EndComp
+$Comp
+L R R?
+U 1 1 53822BF5
+P 8550 2500
+F 0 "R?" V 8630 2500 40  0000 C CNN
+F 1 "3900" V 8557 2501 40  0000 C CNN
+F 2 "~" V 8480 2500 30  0000 C CNN
+F 3 "~" H 8550 2500 30  0000 C CNN
+	1    8550 2500
+	0    -1   -1   0   
+$EndComp
+Text GLabel 8950 2500 2    60   Input ~ 0
+GND
+Text GLabel 5200 1400 1    60   Input ~ 0
+GND
 Wire Wire Line
 	8250 2050 8350 2050
 Wire Wire Line
@@ -1109,7 +1115,7 @@ Connection ~ 3200 6700
 Connection ~ 3850 6700
 Connection ~ 4450 6700
 Wire Wire Line
-	6850 1450 6850 850 
+	6850 850  6850 1750
 Wire Wire Line
 	7250 850  7500 850 
 Wire Wire Line
@@ -1370,24 +1376,38 @@ Wire Wire Line
 	10700 2000 10050 2000
 Wire Wire Line
 	10800 1000 10800 2400
-$Comp
-L R R?
-U 1 1 53822BF5
-P 8550 2500
-F 0 "R?" V 8630 2500 40  0000 C CNN
-F 1 "R" V 8557 2501 40  0000 C CNN
-F 2 "~" V 8480 2500 30  0000 C CNN
-F 3 "~" H 8550 2500 30  0000 C CNN
-	1    8550 2500
-	0    -1   -1   0   
-$EndComp
 Wire Wire Line
 	7200 2500 8300 2500
-Text GLabel 8950 2500 2    60   Input ~ 0
-GND
 Wire Wire Line
 	8800 2500 8950 2500
 Wire Wire Line
-	7200 2900 7200 2800
+	7200 2800 7200 3100
 Connection ~ 7200 2900
+Wire Wire Line
+	5200 1750 5200 1400
+Wire Wire Line
+	5100 1750 5100 1400
+Wire Wire Line
+	5100 1400 5300 1400
+Connection ~ 5200 1750
+Connection ~ 5100 1750
+Wire Wire Line
+	5300 1400 5300 1750
+Connection ~ 5200 1400
+Connection ~ 5300 1750
+Connection ~ 6800 1500
+NoConn ~ 5400 1750
+NoConn ~ 5500 1750
+Wire Wire Line
+	6850 1750 6200 1750
+Connection ~ 6200 1750
+Wire Wire Line
+	7200 2600 8900 2600
+Wire Wire Line
+	8900 2600 8900 2500
+Connection ~ 8900 2500
+Connection ~ 7200 2600
+Connection ~ 7200 2500
+Connection ~ 7200 3000
+Connection ~ 7200 3100
 $EndSCHEMATC
