@@ -531,7 +531,7 @@ Text GLabel 7400 2700 2    60   Input ~ 0
 DVDD
 Text GLabel 7400 2850 2    60   Input ~ 0
 GND
-Text GLabel 7700 3200 2    60   Input ~ 0
+Text GLabel 7800 3200 2    60   Input ~ 0
 AVDD
 Text GLabel 7700 3650 2    60   Input ~ 0
 AVDD
@@ -733,8 +733,6 @@ Text GLabel 7500 850  2    60   Input ~ 0
 OSC
 Text GLabel 7450 1450 2    60   Input ~ 0
 /OSC
-NoConn ~ 7200 3300
-NoConn ~ 7200 3400
 NoConn ~ 10050 1100
 NoConn ~ 10050 1200
 NoConn ~ 10050 1300
@@ -852,6 +850,8 @@ Text GLabel 8950 2500 2    60   Input ~ 0
 GND
 Text GLabel 5200 1400 1    60   Input ~ 0
 GND
+NoConn ~ 5400 1750
+NoConn ~ 5500 1750
 Wire Wire Line
 	8250 2050 8350 2050
 Wire Wire Line
@@ -1170,8 +1170,6 @@ Wire Wire Line
 Connection ~ 7200 2800
 Connection ~ 7200 2700
 Wire Wire Line
-	7200 3200 7700 3200
-Wire Wire Line
 	7200 3600 7350 3600
 Wire Wire Line
 	7350 3600 7350 3650
@@ -1381,7 +1379,7 @@ Wire Wire Line
 Wire Wire Line
 	8800 2500 8950 2500
 Wire Wire Line
-	7200 2800 7200 3100
+	7200 2900 7200 2800
 Connection ~ 7200 2900
 Wire Wire Line
 	5200 1750 5200 1400
@@ -1396,8 +1394,6 @@ Wire Wire Line
 Connection ~ 5200 1400
 Connection ~ 5300 1750
 Connection ~ 6800 1500
-NoConn ~ 5400 1750
-NoConn ~ 5500 1750
 Wire Wire Line
 	6850 1750 6200 1750
 Connection ~ 6200 1750
@@ -1408,6 +1404,34 @@ Wire Wire Line
 Connection ~ 8900 2500
 Connection ~ 7200 2600
 Connection ~ 7200 2500
-Connection ~ 7200 3000
-Connection ~ 7200 3100
+NoConn ~ 7200 3000
+NoConn ~ 7200 3100
+$Comp
+L C C?
+U 1 1 538342CC
+P 7450 3300
+F 0 "C?" H 7450 3400 40  0000 L CNN
+F 1 "2,2pF" H 7456 3215 40  0000 L CNN
+F 2 "~" H 7488 3150 30  0000 C CNN
+F 3 "~" H 7450 3300 60  0000 C CNN
+	1    7450 3300
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	7200 3300 7250 3300
+Wire Wire Line
+	7650 3300 7650 3500
+Connection ~ 7650 3500
+Wire Wire Line
+	7200 3200 7800 3200
+Wire Wire Line
+	7200 3400 7750 3400
+Wire Wire Line
+	7750 3400 7750 3200
+Connection ~ 7750 3200
+Connection ~ 7650 3300
+Connection ~ 7200 3300
+Connection ~ 7250 3300
+Connection ~ 7200 3200
+Connection ~ 7200 3400
 $EndSCHEMATC
