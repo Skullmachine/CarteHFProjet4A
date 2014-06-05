@@ -1,5 +1,58 @@
-update=03/06/2014 11:23:48
-last_client=kicad
+update=04/06/2014 11:21:11
+last_client=eeschema
+[general]
+version=1
+[cvpcb]
+version=1
+NetIExt=net
+[cvpcb/libraries]
+EquName1=devcms
+[pcbnew]
+version=1
+LastNetListRead=
+UseCmpFile=1
+PadDrill=0.600000000000
+PadDrillOvalY=0.600000000000
+PadSizeH=1.500000000000
+PadSizeV=1.500000000000
+PcbTextSizeV=1.500000000000
+PcbTextSizeH=1.500000000000
+PcbTextThickness=0.300000000000
+ModuleTextSizeV=1.000000000000
+ModuleTextSizeH=1.000000000000
+ModuleTextSizeThickness=0.150000000000
+SolderMaskClearance=0.000000000000
+SolderMaskMinWidth=0.000000000000
+DrawSegmentWidth=0.200000000000
+BoardOutlineThickness=0.100000000000
+ModuleOutlineThickness=0.150000000000
+[pcbnew/libraries]
+LibDir=librairie KICAD;librairie KICAD/YT_borniers
+LibName1=sockets
+LibName2=connect
+LibName3=discret
+LibName4=pin_array
+LibName5=divers
+LibName6=smd_capacitors
+LibName7=smd_resistors
+LibName8=smd_crystal&oscillator
+LibName9=smd_dil
+LibName10=smd_transistors
+LibName11=libcms
+LibName12=display
+LibName13=led
+LibName14=dip_sockets
+LibName15=pga_sockets
+LibName16=valves
+LibName17=AD9954
+LibName18=lasser
+LibName19=open-project
+LibName20=OSC_SMD
+LibName21=SMA_connectors
+LibName22=SOT223
+LibName23=TANTALEC
+LibName24=tinkerforge
+LibName25=borniers
 [eeschema]
 version=1
 LibDir=
@@ -50,40 +103,3 @@ LibName38=librairie KICAD/Power_kl
 LibName39=librairie KICAD/FE
 LibName40=librairie KICAD/mcp2210
 LibName41=librairie KICAD/minicir
-[pcbnew]
-[pcbnew/libraries]
-LibName1=sockets
-LibName2=connect
-LibName3=discret
-LibName4=pin_array
-LibName5=divers
-LibName6=smd_capacitors
-LibName7=smd_resistors
-LibName8=smd_crystal&oscillator
-LibName9=smd_dil
-LibName10=smd_transistors
-LibName11=libcms
-LibName12=display
-LibName13=led
-LibName14=dip_sockets
-LibName15=pga_sockets
-LibName16=valves
-LibName17=librairie KICAD/HC49_sm.kicad
-LibName18=librairie KICAD/SOT223
-LibName19=librairie KICAD/SMA_connectors
-LibName20=librairie KICAD/OSC_SMD
-LibName21=librairie KICAD/tinkerforge
-LibName22=librairie KICAD/AD9954
-LibName23=librairie KICAD/lasser
-LibName24=Resistors_SMD
-LibName25=librairie KICAD/smd_resistors
-LibName26=librairie KICAD/open-project
-LibName27=librairie KICAD/TANTALEC
-LibDir=
-[cvpcb]
-version=1
-NetIExt=net
-[cvpcb/libraries]
-EquName1=devcms
-[general]
-version=1
