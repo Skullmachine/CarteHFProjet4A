@@ -47,7 +47,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "AD9954 - GENERATION SIGNAL HF"
-Date "4 jun 2014"
+Date "5 jun 2014"
 Rev "0.1"
 Comp "Polytech'Tours"
 Comment1 ""
@@ -693,12 +693,12 @@ DVDD_I/O
 $Comp
 L CONN_2 P3
 U 1 1 537F36C4
-P 3100 750
-F 0 "P3" V 3050 750 40  0000 C CNN
-F 1 "CONN_2" V 3150 750 40  0000 C CNN
-F 2 "" H 3100 750 60  0000 C CNN
-F 3 "" H 3100 750 60  0000 C CNN
-	1    3100 750 
+P 3100 650
+F 0 "P3" V 3050 650 40  0000 C CNN
+F 1 "CONN_2" V 3150 650 40  0000 C CNN
+F 2 "" H 3100 650 60  0000 C CNN
+F 3 "" H 3100 650 60  0000 C CNN
+	1    3100 650 
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -712,9 +712,8 @@ F 3 "" H 1800 800 60  0000 C CNN
 	1    1800 800 
 	1    0    0    -1  
 $EndComp
-Text GLabel 2600 650  0    60   Input ~ 0
+Text GLabel 2600 550  0    60   Input ~ 0
 GND
-NoConn ~ 2200 750 
 Text GLabel 10350 5250 0    60   Input ~ 0
 GND
 Text GLabel 10350 4950 0    60   Input ~ 0
@@ -1211,9 +1210,7 @@ Wire Wire Line
 Wire Wire Line
 	1100 850  1400 850 
 Wire Wire Line
-	2200 850  2750 850 
-Wire Wire Line
-	2600 650  2750 650 
+	2600 550  2750 550 
 Wire Wire Line
 	10350 5250 10600 5250
 Wire Wire Line
@@ -1356,9 +1353,7 @@ Connection ~ 10600 4950
 Connection ~ 10600 5050
 Connection ~ 10600 5150
 Connection ~ 10600 5250
-Connection ~ 2750 650 
-Connection ~ 2750 850 
-Connection ~ 2200 850 
+Connection ~ 2750 550 
 Connection ~ 1400 850 
 Connection ~ 1400 750 
 Connection ~ 8800 2500
@@ -1444,7 +1439,7 @@ Connection ~ 900  1450
 Connection ~ 900  1600
 Connection ~ 900  1900
 Connection ~ 800  750 
-Connection ~ 2600 650 
+Connection ~ 2600 550 
 Text GLabel 3000 1350 0    60   Input ~ 0
 DVDD
 Text GLabel 3000 1750 0    60   Input ~ 0
@@ -1608,4 +1603,9 @@ Connection ~ 900  5350
 Connection ~ 900  4950
 Connection ~ 3050 4950
 Connection ~ 3050 5350
+NoConn ~ 2200 850 
+Wire Wire Line
+	2200 750  2750 750 
+Connection ~ 2750 750 
+Connection ~ 2200 750 
 $EndSCHEMATC
