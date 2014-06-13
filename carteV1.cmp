@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 04/06/2014 20:22:51
+Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 13/06/2014 16:38:36
 
 BeginCmp
 TimeStamp = /537A99AC;
@@ -176,6 +176,13 @@ IdModule  = 0603;
 EndCmp
 
 BeginCmp
+TimeStamp = /53917F4C;
+Reference = C26;
+ValeurCmp = 0,1uF;
+IdModule  = 0603;
+EndCmp
+
+BeginCmp
 TimeStamp = /537A0D2B;
 Reference = C35;
 ValeurCmp = 18pF;
@@ -263,14 +270,14 @@ BeginCmp
 TimeStamp = /537918D6;
 Reference = J7;
 ValeurCmp = CRYSTAL OUTDUT2;
-IdModule  = SOLEIL-SMA-449;
+IdModule  = SMA;
 EndCmp
 
 BeginCmp
 TimeStamp = /537919C0;
 Reference = J12;
 ValeurCmp =  FILTER_IOUT_DUT2;
-IdModule  = SOLEIL-SMA-449;
+IdModule  = SMA;
 EndCmp
 
 BeginCmp

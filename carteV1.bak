@@ -47,7 +47,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "AD9954 - GENERATION SIGNAL HF"
-Date "5 jun 2014"
+Date "13 jun 2014"
 Rev "0.1"
 Comp "Polytech'Tours"
 Comment1 ""
@@ -244,17 +244,6 @@ F 1 "33pF" H 3856 6815 40  0000 L CNN
 F 2 "~" H 3888 6750 30  0000 C CNN
 F 3 "~" H 3850 6900 60  0000 C CNN
 	1    3850 6900
-	1    0    0    -1  
-$EndComp
-$Comp
-L GND #PWR01
-U 1 1 53791D95
-P 3200 7250
-F 0 "#PWR01" H 3200 7250 30  0001 C CNN
-F 1 "GND" H 3200 7180 30  0001 C CNN
-F 2 "" H 3200 7250 60  0000 C CNN
-F 3 "" H 3200 7250 60  0000 C CNN
-	1    3200 7250
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -465,7 +454,7 @@ Text GLabel 7800 3200 2    60   Input ~ 0
 AVDD
 Text GLabel 7700 3650 2    60   Input ~ 0
 AVDD
-Text GLabel 7700 3500 2    60   Input ~ 0
+Text GLabel 7950 3500 2    60   Input ~ 0
 GND
 Text GLabel 5100 4700 3    60   Input ~ 0
 AVDD
@@ -1025,7 +1014,6 @@ Wire Wire Line
 Connection ~ 4450 6550
 Wire Wire Line
 	2500 7100 4450 7100
-Connection ~ 3849 7100
 Connection ~ 4450 7100
 Connection ~ 2500 7100
 Connection ~ 2650 6550
@@ -1104,7 +1092,7 @@ Wire Wire Line
 Wire Wire Line
 	7350 3650 7700 3650
 Wire Wire Line
-	7200 3500 7700 3500
+	7200 3500 7950 3500
 Wire Wire Line
 	5700 4700 5700 4350
 Wire Wire Line
@@ -1300,20 +1288,11 @@ $EndComp
 Wire Wire Line
 	7200 3300 7250 3300
 Wire Wire Line
-	7650 3300 7650 3500
-Connection ~ 7650 3500
-Wire Wire Line
 	7200 3200 7800 3200
-Wire Wire Line
-	7200 3400 7750 3400
-Wire Wire Line
-	7750 3400 7750 3200
-Connection ~ 7750 3200
 Connection ~ 7650 3300
 Connection ~ 7200 3300
 Connection ~ 7250 3300
 Connection ~ 7200 3200
-Connection ~ 7200 3400
 Wire Wire Line
 	2600 3150 3950 3150
 Wire Wire Line
@@ -1374,9 +1353,9 @@ F 3 "~" H 4150 900 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4000 700  4150 700 
+	4000 700  4400 700 
 Wire Wire Line
-	4000 1100 4150 1100
+	4000 1100 4400 1100
 Connection ~ 4150 1100
 Connection ~ 4000 1100
 Connection ~ 5500 1400
@@ -1608,4 +1587,41 @@ Wire Wire Line
 	2200 750  2750 750 
 Connection ~ 2750 750 
 Connection ~ 2200 750 
+Text GLabel 3200 7250 3    60   Input ~ 0
+GND
+Connection ~ 3200 7250
+Connection ~ 3850 7100
+$Comp
+L C C26
+U 1 1 53917F4C
+P 4400 900
+F 0 "C26" H 4400 1000 40  0000 L CNN
+F 1 "0,1uF" H 4406 815 40  0000 L CNN
+F 2 "~" H 4438 750 30  0000 C CNN
+F 3 "~" H 4400 900 60  0000 C CNN
+	1    4400 900 
+	1    0    0    -1  
+$EndComp
+Connection ~ 4400 1100
+Connection ~ 4400 700 
+Connection ~ 7800 3200
+Connection ~ 7950 3500
+Text GLabel 7550 3400 2    60   Input ~ 0
+AVDD
+Wire Wire Line
+	7200 3400 7550 3400
+Connection ~ 7550 3400
+Connection ~ 7200 3400
+Wire Wire Line
+	7650 3300 7950 3300
+Wire Wire Line
+	7950 3300 7950 3500
+Wire Wire Line
+	5000 1750 5000 1400
+Wire Wire Line
+	5000 1400 5200 1400
+Connection ~ 5000 1750
+Connection ~ 5100 1400
+Connection ~ 5300 1400
+Connection ~ 5000 1400
 $EndSCHEMATC
