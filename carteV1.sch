@@ -47,7 +47,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "AD9954 - GENERATION SIGNAL HF"
-Date "13 jun 2014"
+Date "7 nov 2014"
 Rev "0.1"
 Comp "Polytech'Tours"
 Comment1 ""
@@ -295,17 +295,6 @@ F 3 "~" H 2600 3950 60  0000 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L USB-MINI-B CON1
-U 1 1 537A55F1
-P 1650 1600
-F 0 "CON1" H 1400 2050 60  0000 C CNN
-F 1 "USB-MINI-B" H 1600 1100 60  0000 C CNN
-F 2 "" H 1650 1600 60  0000 C CNN
-F 3 "" H 1650 1600 60  0000 C CNN
-	1    1650 1600
-	1    0    0    -1  
-$EndComp
-$Comp
 L LM1117MP-3.3 U4
 U 1 1 537A8393
 P 10000 6150
@@ -318,7 +307,7 @@ F 3 "" H 10000 6150 60  0000 C CNN
 $EndComp
 Text GLabel 9300 6000 0    60   Input ~ 0
 5V
-Text GLabel 800  750  0    60   Input ~ 0
+Text GLabel 2500 750  0    60   Input ~ 0
 5V
 Text GLabel 10850 6000 1    60   Input ~ 0
 DVDD_I/O
@@ -392,54 +381,12 @@ F 3 "~" H 7050 1450 60  0000 C CNN
 	1    7050 1450
 	0    1    1    0   
 $EndComp
-Text GLabel 8200 1550 0    60   Input ~ 0
-D+
-Text GLabel 8200 1700 0    60   Input ~ 0
-D-
-Text GLabel 900  1450 0    60   Input ~ 0
-D+
-Text GLabel 900  1600 0    60   Input ~ 0
-D-
-Text GLabel 900  1900 0    60   Input ~ 0
-GND
-$Comp
-L MCP2210-SO U5
-U 1 1 537ABAA0
-P 8650 850
-F 0 "U5" H 8650 900 50  0000 L BNN
-F 1 "MCP2210-SO" H 9000 750 50  0000 L BNN
-F 2 "SSOP-20" H 9000 700 50  0001 L CNN
-F 3 "~" H 9720 -1125 60  0000 C CNN
-	1    8650 850 
-	1    0    0    -1  
-$EndComp
-Text GLabel 10600 3550 3    60   Input ~ 0
-MOSI
-Text GLabel 10450 3550 3    60   Input ~ 0
-MISO
-Text GLabel 10300 3550 3    60   Input ~ 0
-SCK
 Text GLabel 5800 1400 1    60   Input ~ 0
 MOSI
 Text GLabel 6250 1400 1    60   Input ~ 0
 MISO
 Text GLabel 5950 1400 1    60   Input ~ 0
 SCK
-$Comp
-L C C12
-U 1 1 537AD1AA
-P 8200 800
-F 0 "C12" H 8200 900 40  0000 L CNN
-F 1 "0,1uF" H 8206 715 40  0000 L CNN
-F 2 "~" H 8238 650 30  0000 C CNN
-F 3 "~" H 8200 800 60  0000 C CNN
-	1    8200 800 
-	1    0    0    -1  
-$EndComp
-Text GLabel 8200 2200 0    60   Input ~ 0
-GND
-Text GLabel 10750 3550 3    60   Input ~ 0
-CHIPSELECT
 Text GLabel 6100 1400 1    60   Input ~ 0
 CHIPSELECT
 Text GLabel 5500 1400 1    60   Input ~ 0
@@ -631,40 +578,10 @@ F 3 "~" H 8650 5050 300 0000 C CNN
 	1    8650 5050
 	1    0    0    -1  
 $EndComp
-Text GLabel 7800 600  0    60   Input ~ 0
-GND
-$Comp
-L R R1001
-U 1 1 537BC0C4
-P 8650 650
-F 0 "R1001" V 8730 650 40  0000 C CNN
-F 1 "390" V 8657 651 40  0000 C CNN
-F 2 "~" V 8580 650 30  0000 C CNN
-F 3 "~" H 8650 650 30  0000 C CNN
-	1    8650 650 
-	0    -1   -1   0   
-$EndComp
-Text GLabel 8250 1900 0    60   Input ~ 0
-OSC
-Text GLabel 8250 2050 0    60   Input ~ 0
-/OSC
 Text GLabel 7500 850  2    60   Input ~ 0
 OSC
 Text GLabel 7450 1450 2    60   Input ~ 0
 /OSC
-NoConn ~ 10050 1100
-NoConn ~ 10050 1200
-NoConn ~ 10050 1300
-NoConn ~ 10050 1400
-NoConn ~ 10050 1500
-NoConn ~ 10050 1600
-NoConn ~ 10050 1700
-NoConn ~ 10050 1800
-NoConn ~ 2200 1300
-NoConn ~ 2200 1450
-NoConn ~ 2200 1750
-NoConn ~ 2200 1900
-NoConn ~ 1100 1750
 NoConn ~ 5500 6450
 $Comp
 L AD9954 U1
@@ -677,8 +594,6 @@ F 3 "~" H 5550 3250 60  0000 C CNN
 	1    5550 3050
 	1    0    0    -1  
 $EndComp
-Text GLabel 8100 1200 0    60   Input ~ 0
-DVDD_I/O
 $Comp
 L CONN_2 P3
 U 1 1 537F36C4
@@ -688,17 +603,6 @@ F 1 "CONN_2" V 3150 650 40  0000 C CNN
 F 2 "" H 3100 650 60  0000 C CNN
 F 3 "" H 3100 650 60  0000 C CNN
 	1    3100 650 
-	1    0    0    -1  
-$EndComp
-$Comp
-L CONN_2X2 P2
-U 1 1 537F36D3
-P 1800 800
-F 0 "P2" H 1800 950 50  0000 C CNN
-F 1 "CONN_2X2" H 1810 670 40  0000 C CNN
-F 2 "" H 1800 800 60  0000 C CNN
-F 3 "" H 1800 800 60  0000 C CNN
-	1    1800 800 
 	1    0    0    -1  
 $EndComp
 Text GLabel 2600 550  0    60   Input ~ 0
@@ -731,28 +635,6 @@ F 3 "" H 10950 4900 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CONN_2X2 P1
-U 1 1 538216EB
-P 10400 2800
-F 0 "P1" H 10400 2950 50  0000 C CNN
-F 1 "CONN_2X2" H 10410 2670 40  0000 C CNN
-F 2 "" H 10400 2800 60  0000 C CNN
-F 3 "" H 10400 2800 60  0000 C CNN
-	1    10400 2800
-	0    -1   -1   0   
-$EndComp
-$Comp
-L CONN_2X2 P4
-U 1 1 538216FA
-P 10750 2800
-F 0 "P4" H 10750 2950 50  0000 C CNN
-F 1 "CONN_2X2" H 10760 2670 40  0000 C CNN
-F 2 "" H 10750 2800 60  0000 C CNN
-F 3 "" H 10750 2800 60  0000 C CNN
-	1    10750 2800
-	0    -1   -1   0   
-$EndComp
-$Comp
 L R R1
 U 1 1 53822BF5
 P 8550 2500
@@ -769,41 +651,6 @@ Text GLabel 5200 1400 1    60   Input ~ 0
 GND
 NoConn ~ 5400 1750
 NoConn ~ 5500 1750
-Wire Wire Line
-	8250 2050 8350 2050
-Wire Wire Line
-	8250 1900 8350 1900
-Connection ~ 8350 1000
-Connection ~ 8400 650 
-Wire Wire Line
-	8350 800  8350 1000
-Wire Wire Line
-	8900 800  8350 800 
-Wire Wire Line
-	8900 650  8900 800 
-Connection ~ 8300 1200
-Wire Wire Line
-	8300 650  8400 650 
-Wire Wire Line
-	8300 1200 8300 650 
-Connection ~ 8200 600 
-Connection ~ 7800 600 
-Connection ~ 8350 1350
-Connection ~ 8350 1200
-Wire Wire Line
-	8100 1200 8350 1200
-Connection ~ 8350 1550
-Connection ~ 8350 1700
-Wire Wire Line
-	8200 1700 8350 1700
-Wire Wire Line
-	8200 1550 8350 1550
-Connection ~ 10050 1000
-Wire Wire Line
-	10050 1000 10800 1000
-Connection ~ 10050 2000
-Connection ~ 10050 2100
-Connection ~ 10050 2200
 Connection ~ 8900 4750
 Wire Wire Line
 	8900 4850 8900 4750
@@ -1159,34 +1006,9 @@ Wire Wire Line
 Wire Wire Line
 	3400 3550 3950 3550
 Wire Wire Line
-	900  1900 1100 1900
-Wire Wire Line
-	900  1600 1100 1600
-Wire Wire Line
-	900  1450 1100 1450
-Wire Wire Line
 	2350 2750 2600 2750
 Wire Wire Line
-	800  750  1400 750 
-Connection ~ 1100 1450
-Connection ~ 1100 1600
-Connection ~ 1100 1900
-Wire Wire Line
 	3800 2450 3950 2450
-Wire Wire Line
-	8200 2200 8350 2200
-Connection ~ 8350 2200
-Connection ~ 8350 2050
-Connection ~ 8350 1900
-Connection ~ 8900 650 
-Wire Wire Line
-	8350 1200 8350 1350
-Wire Wire Line
-	7800 600  8200 600 
-Wire Wire Line
-	8200 1000 8200 1200
-Connection ~ 8200 1200
-Connection ~ 8200 1000
 Wire Wire Line
 	6750 1150 6850 1150
 Connection ~ 6850 1150
@@ -1211,34 +1033,6 @@ Wire Wire Line
 	10350 4850 10600 4850
 Wire Wire Line
 	10350 4550 10600 4550
-Wire Wire Line
-	10300 3550 10300 3200
-Wire Wire Line
-	10300 3200 10350 3200
-Wire Wire Line
-	10450 3550 10450 3200
-Wire Wire Line
-	10600 3550 10600 3200
-Wire Wire Line
-	10600 3200 10700 3200
-Wire Wire Line
-	10750 3550 10800 3550
-Wire Wire Line
-	10800 3550 10800 3200
-Wire Wire Line
-	10350 2400 10350 2200
-Wire Wire Line
-	10350 2200 10050 2200
-Wire Wire Line
-	10450 2400 10450 2100
-Wire Wire Line
-	10450 2100 10050 2100
-Wire Wire Line
-	10700 2400 10700 2000
-Wire Wire Line
-	10700 2000 10050 2000
-Wire Wire Line
-	10800 1000 10800 2400
 Wire Wire Line
 	7200 2500 8300 2500
 Wire Wire Line
@@ -1293,7 +1087,6 @@ Wire Wire Line
 	2600 3150 3950 3150
 Wire Wire Line
 	2600 3750 2850 3750
-Connection ~ 1100 1300
 Connection ~ 3950 2450
 Connection ~ 3950 2550
 Connection ~ 3950 2650
@@ -1312,14 +1105,6 @@ Connection ~ 2800 4500
 Connection ~ 2400 4500
 Connection ~ 2600 4150
 Connection ~ 2600 2750
-Connection ~ 10350 2400
-Connection ~ 10450 2400
-Connection ~ 10350 3200
-Connection ~ 10450 3200
-Connection ~ 10700 3200
-Connection ~ 10800 3200
-Connection ~ 10700 2400
-Connection ~ 10800 2400
 Connection ~ 10600 4550
 Connection ~ 10600 4650
 Connection ~ 10600 4750
@@ -1329,7 +1114,6 @@ Connection ~ 10600 5050
 Connection ~ 10600 5150
 Connection ~ 10600 5250
 Connection ~ 2750 550 
-Connection ~ 1400 750 
 Connection ~ 8800 2500
 Connection ~ 8300 2500
 Text GLabel 4000 700  0    60   Input ~ 0
@@ -1374,16 +1158,6 @@ Connection ~ 5400 4700
 Connection ~ 5250 4700
 Connection ~ 5100 4700
 Connection ~ 7700 3650
-Connection ~ 8200 1550
-Connection ~ 8200 1700
-Connection ~ 8250 1900
-Connection ~ 8250 2050
-Connection ~ 8200 2200
-Connection ~ 8100 1200
-Connection ~ 10750 3550
-Connection ~ 10600 3550
-Connection ~ 10450 3550
-Connection ~ 10300 3550
 Connection ~ 10350 4550
 Connection ~ 10350 4650
 Connection ~ 10350 4750
@@ -1409,10 +1183,7 @@ Connection ~ 3800 2850
 Connection ~ 3800 2950
 Connection ~ 3800 3050
 Connection ~ 2350 2750
-Connection ~ 900  1450
-Connection ~ 900  1600
-Connection ~ 900  1900
-Connection ~ 800  750 
+Connection ~ 2500 750 
 Connection ~ 2600 550 
 Text GLabel 3000 1350 0    60   Input ~ 0
 DVDD
@@ -1577,10 +1348,6 @@ Connection ~ 900  5350
 Connection ~ 900  4950
 Connection ~ 3050 4950
 Connection ~ 3050 5350
-Wire Wire Line
-	2200 750  2750 750 
-Connection ~ 2750 750 
-Connection ~ 2200 750 
 Text GLabel 3200 7250 3    60   Input ~ 0
 GND
 Connection ~ 3200 7250
@@ -1618,14 +1385,6 @@ Connection ~ 5000 1750
 Connection ~ 5100 1400
 Connection ~ 5300 1400
 Connection ~ 5000 1400
-Connection ~ 1400 850 
 Wire Wire Line
-	1400 750  1400 850 
-Wire Wire Line
-	1100 1300 1100 1050
-Wire Wire Line
-	1100 1050 2200 1050
-Wire Wire Line
-	2200 1050 2200 850 
-Connection ~ 2200 850 
+	2500 750  2750 750 
 $EndSCHEMATC
