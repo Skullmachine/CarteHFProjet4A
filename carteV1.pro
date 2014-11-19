@@ -1,4 +1,4 @@
-update=13/06/2014 16:37:36
+update=19/11/2014 15:46:33
 last_client=eeschema
 [general]
 version=1
@@ -57,7 +57,7 @@ LibName26=modules/sma
 LibName27=SMA_EDGE
 [eeschema]
 version=1
-LibDir=
+LibDir=d:/users/F85601A/Desktop/Git/CarteHFProjet4A/librairie KICAD
 NetFmtName=PcbnewAdvanced
 RptD_X=0
 RptD_Y=100
@@ -105,3 +105,5 @@ LibName38=librairie KICAD/Power_kl
 LibName39=librairie KICAD/FE
 LibName40=librairie KICAD/mcp2210
 LibName41=librairie KICAD/minicir
+LibName42=lm2588sx-adj
+LibName43=rl-5530
