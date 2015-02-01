@@ -1,0 +1,88 @@
+eeschema (2013-07-07 BZR 4022)-stable  >> Creation date: 01/02/2015 15:55:44
+#Cmp ( ordre = Référence )
+| C1         0,1uF       
+| C2         0,1uF       
+| C3         0,1uF       
+| C4         0,1uF       
+| C5         0,1uF       
+| C6         0,1uF       
+| C7         0,1uF       
+| C8         18pF        
+| C9         18pF        
+| C10        13pF        
+| C11        0,1uF       
+| C12        13pF        
+| C13        0,1uF       
+| C14        27pF        
+| C15        6.8pF       
+| C16        33pF        
+| C17        0,1uF       
+| C18        0.01μF     
+| C19        0,1uF       
+| C20        2.2pF       
+| C21        22pF        
+| C22        0,1uF       
+| C23        0,1uF       
+| C24        1μF        
+| C25        2,2pF       
+| J1         CRYSTAL OUTDUT2
+| J2          FILTER_IOUT_DUT2
+| L1         39nH        
+| L2         56nH        
+| L3         68nH        
+| P1         CONN_2      
+| P2         CONN_10     
+| R1         243         
+| R2         25          
+| R3         3.92k       
+| R4         25          
+| R5         3900        
+| T1         T1-1T       
+| U1         AD9954      
+| X1         25mhz       
+#End Cmp
+
+#Cmp ( ordre = Valeur )
+| 2.2pF        C20       
+| 2,2pF        C25       
+| 6.8pF        C15       
+| 13pF         C10       
+| 13pF         C12       
+| 18pF         C8        
+| 18pF         C9        
+| 22pF         C21       
+| 27pF         C14       
+| 33pF         C16       
+| 0,1uF        C1        
+| 0,1uF        C2        
+| 0,1uF        C3        
+| 0,1uF        C4        
+| 0,1uF        C5        
+| 0,1uF        C6        
+| 0,1uF        C7        
+| 0,1uF        C11       
+| 0,1uF        C13       
+| 0,1uF        C17       
+| 0,1uF        C19       
+| 0,1uF        C22       
+| 0,1uF        C23       
+| 0.01μF      C18       
+| 1μF         C24       
+| CRYSTAL OUTDUT2 J1        
+|  FILTER_IOUT_DUT2 J2        
+| 39nH         L1        
+| 56nH         L2        
+| 68nH         L3        
+| CONN_2       P1        
+| CONN_10      P2        
+| 25           R2        
+| 25           R4        
+| 243          R1        
+| 3900         R5        
+| 3.92k        R3        
+| T1-1T        T1        
+| AD9954       U1        
+| 25mhz        X1        
+#End Cmp
+
+#End List

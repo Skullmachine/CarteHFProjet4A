@@ -1,0 +1,222 @@
+\documentclass[twoside]{EPURapport}
+
+\usepackage{graphicx,mwe,lipsum}
+\usepackage[T1]{fontenc}
+\usepackage[final]{pdfpages}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{hyperref}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+
+\thedocument{Compte rendu TP3}{CoDesign}{CoDesign - Mode d'emploi d'une mémoire I2C}
+
+\grade{Sp\'ecialit\'e Informatique Industrielle \\ 4\ieme ann\'ee\\ 2014-2015}
+
+\authors{Thomas GACHE, Thibault ARTUS}{thomas.gache@yahoo.fr,theskullmachine@gmail.com}
+	{}{}
+	{}{}
+
+\supervisors{Alexis ROLLAND}{alexis.rolland@univ-tours.fr}
+	{}{}
+	{}{}
+	{Polytech'Tours}
+
+\abstracts{}
+{}
+{}
+{}
+
+\begin{document}
+
+%\introduction
+
+\vspace{0.2cm}
+
+\chapter{Présentation}
+	
+	\section{Ressources nécessaires}
+
+	\begin{itemize}
+		\item Ordinateur avec les outils Altera Quartus II (13.1) et Eclipse Nios II software Build Tools for Eclipse
+		\vspace{0.2cm}
+		\item Carte DE2-115
+		\vspace{0.2cm}
+		\item Ressources documentaires Altera
+		\vspace{0.2cm}
+	\end{itemize}
+	
+	\section{Présentation des outils utilisés}
+	
+	Le module attaché à Quartus II permettant de concevoir la partie matérielle du design:
+	\vspace{0.2cm}
+	
+	\begin{itemize}
+		\item \textbf{QSYS:} Outil destiné à préparer de manière graphique le proceseur (au sens coeur de processeur plus périphériques et ressources nécessaires). Il permet de des réglages fins et de réaliser réellement un processeur sur mesure.
+		\vspace{0.2cm}
+	\end{itemize}
+	
+	Une fois le processeur synthétisé et téléchargé dans le FPGA, il reste à passer à la partie software, c'est à dire développer et implanter le programme dans ce processeur.
+	\vspace{0.2cm}
+	
+	Le module attaché à Eclipse permettant de concevoir la partie logcielle du design:
+	\vspace{0.2cm}
+	
+	\begin{itemize}
+		\item \textbf{NIOS II Software Build Tools:} Quartus intègre un module logiciel basé sur l'EDI Eclipse permettant de gérer des programmes complexes, de télécharger et déverminer ceux-ci sur une cible NIOS II.
+		\vspace{0.2cm}
+	\end{itemize}
+	
+	\section{Présentation du mode d'emploi}
+	
+	L'objectif de ce mode d'emploi est de mettre en oeuvre une mémoire I2C externe pour stockage de données non volatile lié au processeur NIOS II et/ou à la carte DE2-115.
+	
+\chapter{Mise en place du projet Quartus}
+	
+	Les répertoires de travail sont hiérarchisés de la façon suivante:
+	\vspace{0.2cm}
+	
+	
+	
+	On a lancé le module logiciel \textbf{QSYS} permettant la programmation hardware de notre FPGA.
+	
+	La partie hardware est implémentée comme ci-dessous:
+	\vspace{0.2cm}
+	
+	\begin{figure}[h!]
+		\centering
+			\includegraphics[scale=0.6]{images/qsys.png}
+		\caption{Partie Hardware}
+	\end{figure}
+	
+	On a créé nos module dans l'ordre suivant:
+	\vspace{0.2cm}
+	
+	\begin{enumerate}
+		\item \textbf{Clock Source }
+		\vspace{0.2cm}
+		
+		L'horloge source est paramétré comme ci dessous:
+		\vspace{0.2cm}
+		
+			\begin{figure}[h!]
+		\centering
+			\includegraphics[scale=0.8]{images/clocksource.png}
+		\caption{Paramètres Clock Source}
+	\end{figure}	
+		
+		De plus, on a exporté les signaux clk et reset pour que ces signaux soient paramétrables au niveau software.
+		
+		\newpage
+		
+		\item \textbf{Nios II Processor}
+		\vspace{0.2cm}
+		
+		On a sélectionner le Nios II comme ci-dessous:
+		\vspace{0.2cm}
+		
+		\begin{figure}[h!]
+		\centering
+			\includegraphics[scale=0.8]{images/niosii.png}
+		\caption{Sélection Nios II}
+	\end{figure}	
+		
+		\item \textbf{On-Chip Memory (RAM)}
+		\vspace{0.2cm}
+		
+		On a sélectionné un module de 64 Ko de RAM comme paramétré ci-dessous:
+		\vspace{0.2cm}
+		
+		\begin{figure}[h!]
+		\centering
+			\includegraphics[scale=0.8]{images/ram.png}
+		\caption{Paramètres RAM}
+	\end{figure}
+		
+		De plus, il faut revenir dans les paramètres du Nios II pour paramétrer les vecteurs d'interruption:
+		\vspace{0.2cm}
+		
+		\begin{figure}[h!]
+		\centering
+			\includegraphics[scale=0.8]{images/vectors.png}
+		\caption{Paramètres des vecteurs d'interruption}
+	\end{figure}
+		
+		\item \textbf{JTAG UART}
+		\vspace{0.2cm}
+		
+		Création d'un JTAG UART pour gérer l'implémentation du code software et le debug.
+		
+		\newpage
+		
+		\item\textbf{Interval Timer}
+		\vspace{0.2cm}
+		
+		Création de l'IP core d'un timer permettant la gestion du temps du protocole I2C:
+		\vspace{0.2cm}
+		
+		\begin{figure}[h!]
+		\centering
+			\includegraphics[scale=0.8]{images/timer.png}
+		\caption{Paramètres Timer}
+	\end{figure}
+		
+		\item \textbf{I2C Master}
+		\vspace{0.2cm}
+		
+		L'IP core d'un maître I2C n'étant pas présent de base dans QSYS, on a pris un opencore créé et mis à jour par Richard Herveille. \url{http://opencores.org/project,i2c}
+		\vspace{0.2cm}
+	
+	Il faut faire une \textit{Analysis \& Synthesis} des fichiers Verilog dans un nouveau projet Quartus pour en vérifier l'intégrité.
+	Ensuite, on a créé un nouveau composant I2C Master en ajoutant les fichiers Verilog de l'opencore téléchargé précédemment.
+	
+	\begin{figure}[h!]
+		\centering
+			\includegraphics[scale=0.5]{images/module.png}
+		\caption{Ajouts des fichiers de synthèse}
+	\end{figure}
+		
+		A la suite de l'ajout du module, on exporte la connexion \textit{export}.
+		
+	\end{enumerate}
+	
+	Il faut après vérification du tout, faire une génération pour créer les fichiers HDL permettant la compilation de l'ensemble des modules dans le \textit{Top Level}.
+	\vspace{0.2cm}
+	
+	Enfin, il faut créer un autre projet Quartus dans un nouveau répertoire pour compiler l'ensemble des modules précédemment générés sur QSYS pour en faire le \textit{Top Level} d'intégration.
+	Il suffit ensuite de programmer la carte.
+	
+\chapter{Mise en place du projet Eclipse NBT}
+	
+	\section{Validation du fonctionnement hardware}
+	Après avoir réussi l'implémentation du programme dans la carte. Il faut lancer le plugin \textbf{Nios II Software Build Tools for Eclipse} et créer un nouveau projet \textit{HelloWorld.c} qui fera apparaître un projet BSP et le projet contenant le \textit{HelloWorld.c}. Une fois les deux projets créés, il suffit de générer le projet BSP via son éditeur, puis le compiler. Ensuite compiler le projet où se trouve le fichier \textit{HelloWorld.c}. Il devrait apparaître dans la console \textit{Hello from Nios II!}.
+	\vspace{0.2cm}
+	
+	\section{Mise en place des librairies contenant les fonctions I2C}
+	
+	Pour utiliser les fonctions présentes dans le paquetage de l'opencore maître I2C, il suffit d'inclure dans le projet les librairies \textit{system.h} et \textit{i2c\_opencores.h}. Voici l'arborescence obtenue.
+	
+	\begin{figure}[h!]
+		\centering
+			\includegraphics[scale=0.65]{images/arborescence.png}
+		\caption{Arborescence des projets}
+	\end{figure}
+	
+	Un programme de test d'une mémoire I2C externe est présente aussi dans le paquetage, nommée \textit{I2C\_tests.c} qu'il est possible d'utiliser pour effectuer ses propres tests. 
+
+	
+	
+%\conclusion
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\annexe
+	
+
+
+		
+\end{document}
+
